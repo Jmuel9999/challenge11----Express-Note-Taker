@@ -1,23 +1,14 @@
 {
-  "name": "challenge11",
+  "name": "note-taker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jmuel9999/challenge11----SQL-Employee-Tracker.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jmuel9999/challenge11----SQL-Employee-Tracker/issues"
-  },
-  "homepage": "https://github.com/Jmuel9999/challenge11----SQL-Employee-Tracker#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.16.4"
   }
 }
