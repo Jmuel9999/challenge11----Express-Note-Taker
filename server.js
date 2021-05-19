@@ -3,15 +3,23 @@ const express = require('express');
 // instantiate (define) the server
 const app = express();
 
-// brings up note taker homepage
-app.get('/*', function(req, res) {
-    res.sendFile('./public/index.html', {root: __dirname})
-});
-
 // link notes.html to the index.html "get started" button
 app.get('/notes', function(req, res) {
     res.sendFile('/public/notes.html', {root: __dirname});
 });
+
+// brings up index.html
+app.get('/*', function(req, res) {
+    res.sendFile('/public/index.html', {root: __dirname})
+});
+
+// get data from db.json and return all notes
+app.get('/api/notes', function(req, res) {
+    res.json('/db/db.json');
+});
+
+// add to notes.html and db.json, return to client
+app.post('/api/notes')
 
 // tells server to listen for requests
 app.listen(3000, () => {
