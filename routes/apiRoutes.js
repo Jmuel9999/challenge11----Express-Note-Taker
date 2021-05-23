@@ -3,8 +3,9 @@ const db = require('../db/db');
 // fiel system
 const fs = require('fs');
 
+// get api/notes
 router.get('/notes', function(req, res) {
-    res.json(notes);
+    res.json(db);
 });
 
 // add to notes.html and db.json, return to client

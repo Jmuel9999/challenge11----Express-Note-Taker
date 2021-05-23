@@ -17,9 +17,9 @@ app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
 
 // get data from db.json and return all notes
-app.get('/api/notes', function(req, res) {
-    res.json(db);
-});
+// app.get('/api/notes', function(req, res) {
+//     res.json(db);
+// });
 
 
 
