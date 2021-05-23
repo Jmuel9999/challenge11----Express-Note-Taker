@@ -9,7 +9,7 @@ router.get('/notes', function(req, res) {
 // brings up index.html
 router.get('*', function(req, res) {
     // dirname references the path of file
-    res.sendFile(path.join(__dirname, '/public/index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 module.exports = router;
