@@ -1,30 +1,25 @@
 
 const express = require('express');
+const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 const PORT = process.env.PORT || 3000;
 // instantiate (define) the server
 const app = express();
-const db = require('./db/db.json');
 
-// link notes.html to the index.html "get started" button
-app.get('/notes', function(req, res) {
-    res.sendFile('/public/notes.html', {root: __dirname});
-});
+
+// bring in express package and MIDDLEWARE
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static('public'));
+
+// use api routes
+app.use('/', htmlRoutes);
+app.use('/api', apiRoutes);
 
 // get data from db.json and return all notes
-app.get('/api/notes', function(req, res) {
-    res.json(db);
-});
-
-// add to notes.html and db.json, return to client
-app.post('/api/notes', (req, res) => {
-    
-    //req.body.id = db.length.toString();
-});
-
-// brings up index.html
-app.get('/*', function(req, res) {
-    res.sendFile('/public/index.html', {root: __dirname})
-});
+// app.get('/api/notes', function(req, res) {
+//     res.json(db);
+// });
 
 
 
