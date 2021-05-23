@@ -1,5 +1,6 @@
 
 const express = require('express');
+const PORT = process.env.PORT || 3000;
 // instantiate (define) the server
 const app = express();
 const db = require('./db/db.json');
@@ -28,6 +29,6 @@ app.get('/*', function(req, res) {
 
 
 // tells server to listen for requests
-app.listen(3000, () => {
-    console.log(`API server now on port 3000!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}`);
 });

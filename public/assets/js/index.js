@@ -1,10 +1,13 @@
+// GOOGLE everything you don't know
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+// "IF we are on the notes page..."
 if (window.location.pathname === '/notes') {
+  //"THEN...initialize variables to the DOM"
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -12,7 +15,7 @@ if (window.location.pathname === '/notes') {
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
-// Show an element
+// Show an element THINK CLAYMATION
 const show = (elem) => {
   elem.style.display = 'inline';
 };
@@ -53,6 +56,7 @@ const deleteNote = (id) =>
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
+  // If there is an ID  
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
