@@ -13,8 +13,10 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // use api routes
-app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
+// Always the last route to add
+app.use('/', htmlRoutes);
+
 
 // get data from db.json and return all notes
 // app.get('/api/notes', function(req, res) {

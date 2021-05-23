@@ -1,17 +1,26 @@
 const router = require('express').Router();
-const db = require('../db/db');
+const path = require('path');
+//const db = require('../db/db.json');
 // fiel system
 const fs = require('fs');
 
+// shows saved notes
+function readNotes() {
+    const notes = JSON.parse(fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf-8'));
+    return notes;
+};
+
 // get api/notes
 router.get('/notes', function(req, res) {
-    res.json(db);
+    const notes = readNotes()
+    res.json(notes);
 });
 
 // add to notes.html and db.json, return to client
 router.post('/notes', function(req, res) {
     let request = req.body;
     // push request into notes
+    const notes = readNotes()
     notes.push(request);
     res.json(notes);
     //                                       specify file name and type we are writing to
