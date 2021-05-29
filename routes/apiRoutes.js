@@ -16,6 +16,12 @@ router.get('/notes', function(req, res) {
     res.json(notes);
 });
 
+// post to store notes
+router.post('/notes', (req, res) => {
+    const notes = 
+});
+
+// add something to do with id of each note here??
 // add to notes.html and db.json, return to client
 router.post('/notes', function(req, res) {
     let request = req.body;

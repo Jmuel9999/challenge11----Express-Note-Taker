@@ -1,4 +1,4 @@
-// GOOGLE everything you don't know
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;

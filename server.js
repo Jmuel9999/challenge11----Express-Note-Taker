@@ -9,7 +9,9 @@ const app = express();
 
 // bring in express package and MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
+// parses incoming requests in JSON format
 app.use(express.json());
+// allows us to load the files that are in the public directory
 app.use(express.static('public'));
 
 // use api routes
@@ -23,7 +25,7 @@ app.use('/', htmlRoutes);
 //     res.json(db);
 // });
 
-
+ 
 
 // tells server to listen for requests
 app.listen(PORT, () => {
