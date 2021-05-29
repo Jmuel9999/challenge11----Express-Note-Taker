@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const generateUniqueId = require('generate-unique-id');
 const path = require('path');
 //const db = require('../db/db.json');
 // fiel system
@@ -16,18 +17,17 @@ router.get('/notes', function(req, res) {
     res.json(notes);
 });
 
-// post to store notes
-router.post('/notes', (req, res) => {
-    const notes = 
-});
-
-// add something to do with id of each note here??
 // add to notes.html and db.json, return to client
 router.post('/notes', function(req, res) {
+    // create a unique id for each note
+    const id = generateUniqueId();
     let request = req.body;
+    // attach id to note, so user can bring up each saved note later on
+    request.id = id;
     // push request into notes
     const notes = readNotes()
     notes.push(request);
+    
     res.json(notes);
     //                                       specify file name and type we are writing to
     fs.writeFileSync(path.join(__dirname, '../db/db.json'), JSON.stringify(notes));
