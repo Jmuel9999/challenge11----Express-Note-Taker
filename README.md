@@ -11,4 +11,5 @@ Using back-end server tools, this app takes user input and store notes for them 
 * CSS
 
 ## Screenshots of the app pages
-![Note taker homepage](screenshot1) 
+![Note taker homepage](./snapshots/screenshot1.png) 
+![Note taker notes page](./snapshots/screenshot2.png)
