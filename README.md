@@ -10,6 +10,5 @@ Using back-end server tools, this app takes user input and store notes for them 
 * HTML
 * CSS
 
-## Assignment Video Walkthrough
-
-## Screenshot the two pages of the website
+## Screenshots of the app pages
+![Note taker homepage](screenshot1) 
